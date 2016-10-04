@@ -4,9 +4,14 @@ var connect = require('connect'),
 var app = connect();
 app.use(serveStatic("./angularjs"));
 app.listen(8000);
+console.log("服务器已经在8000端口运行。通过http://127.0.0.1:8000/test.html访问");
 
+
+//简洁版服务器（其中./angularjs表示angularjs文件夹下的内容作为服务对象）。
+//var connect = require('connect');
 // connect.createServer(
 //     connect.static("./angularjs")
 
-// ).listen(5000);
-console.log("服务器已经在8000端口运行。。。")
+// ).listen(8000);
+// console.log("服务器已经在8000端口运行。通过http://127.0.0.1:8000/test.html访问");
+
