@@ -14,20 +14,11 @@
                         { action: "Call Joe", done: false },
                         { action: "Go Home", done: false }]
         };
-        var mybook = {
-            auther: "Qboooogle",
-            details: [{ title: "Flowers", id: 4422313 },
-                        { title: "Shoes", id: 4422313 },
-                        { title: "Tickets", id: 3434232 },
-                        { title: "Call", id: 4422313 },
-                        { title: "Home", id: 4422313 }]
-        };
 
         var todoApp = angular.module("todoApp", []);
 
         todoApp.controller("ToDoCtrl", function ($scope) {
             $scope.todo = model;
-            $scope.book = mybook;
         });
 
     </script>
@@ -56,21 +47,8 @@
             <tbody>
                 <tr ng-repeat = "item in todo.items">
                     <td>{{item.action}}</td>
+                    <td><input type = "checkbox" ng-model = "item.done"/></td>
                     <td>{{item.done}}</td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Title of Book</th>
-                    <th>Book_ID</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat = "item in book.details">
-                    <td>{{item.title}}</td>
-                    <td>{{item.id}}</td>
                 </tr>
             </tbody>
         </table>
