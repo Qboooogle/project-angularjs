@@ -2,13 +2,13 @@
 * @Author: QBoooogle
 * @Date:   2016-10-05 21:16:41
 * @Last Modified by:   QBoooogle
-* @Last Modified time: 2016-10-05 22:00:31
+* @Last Modified time: 2016-10-06 01:26:33
 */
 
 'use strict';
 
 angular.module("sportsStoreAdmin")
-.constant("productUrl", "http://localhost:5000/products")
+.constant("productUrl", "http://localhost:5000/products/")
 .config(function($httpProvider) {
 	$httpProvider.defaults.withCredentials = true;
 })
@@ -28,7 +28,7 @@ angular.module("sportsStoreAdmin")
 	}
 
 	$scope.deleteProduct = function(product) {
-		products.$delete().then(function() {
+		product.$delete().then(function() {
 			$scope.products.splice($scope.products.indexOf(product), 1);
 		});
 	}
@@ -39,10 +39,12 @@ angular.module("sportsStoreAdmin")
 	}
 
 	$scope.startEdit = function(product) {
-		$scope.editedProducts = product;
+		$scope.editedProduct = product;
 	}
 
 	$scope.cancelEdit = function(product) {
-		$scope.editedProducts = null;
+		$scope.editedProduct = null;
 	}
+
+	$scope.listProducts();
 })
