@@ -1,0 +1,18 @@
+<style>
+	.navbar-right {
+		float:right !important;
+		margin-right:5px;
+	}
+	.navbar-text {
+		margin-right:10px;
+	}
+</style>
+
+<div class = "navbar-right">
+	<div class = "navbar-text">
+		<b>您的购物车</b>
+		{{itemCount}}件,
+		{{total() | currency}}
+	</div>
+	<a class = "btn btn-default navbar-btn">购买</a>
+</div>
