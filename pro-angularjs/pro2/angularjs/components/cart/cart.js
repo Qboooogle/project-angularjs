@@ -2,7 +2,7 @@
 * @Author: QBoooogle
 * @Date:   2016-10-05 14:17:22
 * @Last Modified by:   QBoooogle
-* @Last Modified time: 2016-10-05 14:38:25
+* @Last Modified time: 2016-10-05 15:09:25
 */
 
 'use strict';
@@ -12,8 +12,8 @@ angular.module("cart", [])
 	var cartData = [];
 	return {
 		addProduct: function(id, name, price) {
-			var addedTOExistingItem = fasle;
-			for (var i = 0; i < catData.length; i ++ ) {
+			var addedTOExistingItem = false;
+			for (var i = 0; i < cartData.length; i ++ ) {
 				if (cartData[i].id == id) {
 					cartData[i].count++;
 					addedTOExistingItem = true;

@@ -2,6 +2,8 @@
 	.navbar-right {
 		float:right !important;
 		margin-right:5px;
+		background:rgba(10,10,10,0.9);
+		box-shadow: 2px 2px 3px;
 	}
 	.navbar-text {
 		margin-right:10px;
@@ -10,8 +12,8 @@
 
 <div class = "navbar-right">
 	<div class = "navbar-text">
-		<b>您的购物车</b>
-		{{itemCount}}件,
+		<b>您的购物车:</b>
+		{{itemCount()}}件,
 		{{total() | currency}}
 	</div>
 	<a class = "btn btn-default navbar-btn">购买</a>
