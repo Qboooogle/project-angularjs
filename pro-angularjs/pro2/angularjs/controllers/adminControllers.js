@@ -2,13 +2,14 @@
 * @Author: QBoooogle
 * @Date:   2016-10-05 19:42:04
 * @Last Modified by:   QBoooogle
-* @Last Modified time: 2016-10-05 20:18:39
+* @Last Modified time: 2016-10-05 20:47:02
 */
 
 'use strict';
 
 angular.module("sportsStoreAdmin")
 .constant("authUrl", "http://localhost:5000/users/login")
+.constant("orderUrl", "http://localhost:5000/order")
 .controller("authCtrl", function($scope, $http, $location, authUrl) {
 	$scope.authenticate = function (user, pass) {
 		$http.post(authUrl, {
@@ -37,4 +38,30 @@ angular.module("sportsStoreAdmin")
 	$scope.getScreen = function() {
 		return $scope.current == "Prodects"?"/views/adminProducts.html":"/views/adminOrders.html"
 	}
+})
+.controller("ordersCtrl", function($scope, $http, ordersUrl) {
+
+    $scope.get(orderUrl, {
+    	withCredentials: true
+    })
+    .success(function(data) {
+    	$scope.orders = data;
+    })
+    .error(function(error) {
+    	$scope.error = error;
+    });
+
+    $scope.selectedOrder;
+
+    $scope.selectOrder = function(order) {
+    	$scope.selectedOrder = order;
+    }
+
+    $scope.calcTotal = function(order) {
+    	var total = 0;
+    	for (var i - 0; i < order.products.length; i++) {
+    		total += order.products[i].count * order.products[i].price;
+    	}
+    	return total;
+    }
 });
