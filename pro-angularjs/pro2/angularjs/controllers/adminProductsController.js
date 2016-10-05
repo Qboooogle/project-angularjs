@@ -2,14 +2,14 @@
 * @Author: QBoooogle
 * @Date:   2016-10-05 21:16:41
 * @Last Modified by:   QBoooogle
-* @Last Modified time: 2016-10-05 21:31:45
+* @Last Modified time: 2016-10-05 22:00:31
 */
 
 'use strict';
 
 angular.module("sportsStoreAdmin")
-.constant("productUrl", "http://localhost:5000/products/")
-.congig(function($httpProvider) {
+.constant("productUrl", "http://localhost:5000/products")
+.config(function($httpProvider) {
 	$httpProvider.defaults.withCredentials = true;
 })
 .controller("productCtrl", function($scope, $resource, productUrl) {
