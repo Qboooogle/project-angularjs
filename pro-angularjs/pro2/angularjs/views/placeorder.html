@@ -1,0 +1,76 @@
+<style>
+	.ng-invalid {
+		background-color: lightpink;
+	}
+	.ng-valid {
+		background-color: lightgreen;
+	}
+	span.error {
+		color: red;
+		font-weight:bold;
+	}
+	form {
+		margin:auto 20%;
+	}
+	.form-order {
+		margin:auto 20%;
+	}
+</style>
+
+<h2 class = "form-order">马上下单</h2>
+<p class = "form-order">请输入您的详细信息，我们将很快为您发货！</p>
+
+<form action="" name = "shippingForm" accept-charset="utf-8">
+	<div class = "well">
+		<h3>收件人</h3>
+		<div class = "form-group">
+			<label>姓名：</label>
+			<input name = "name" class = "form-crntrol" ng-model = "data.shipping.name" required></input>
+			<span class = "error" ng-show = "shippingForm.name.$error.required">请输入收件人姓名</span>
+		</div>
+
+		<h3>收货地址</h3>
+		<div class = "form-group">
+			<label>街道：</label>
+			<input name = "street" class = "form-crntrol" ng-model = "data.shipping.street" required></input>
+			<span class = "error" ng-show = "shippingForm.street.$error.required">请输入-街道</span>
+		</div>
+
+		<div class = "form-group">
+			<label>市区：</label>
+			<input name = "city" class = "form-crntrol" ng-model = "data.shipping.city" required></input>
+			<span class = "error" ng-show = "shippingForm.city.$error.required">请输入-市区</span>
+		</div>
+
+        <div class = "form-group">
+			<label>省份：</label>
+			<input name = "state" class = "form-crntrol" ng-model = "data.shipping.state" required></input>
+			<span class = "error" ng-show = "shippingForm.state.$error.required">请输入-省份</span>
+		</div>
+
+		<div class = "form-group">
+			<label>编码：</label>
+			<input name = "zip" class = "form-crntrol" ng-model = "data.shipping.zip" required></input>
+			<span class = "error" ng-show = "shippingForm.zip.$error.required">请输入-编码</span>
+		</div>
+
+		<div class = "form-group">
+			<label>国家：</label>
+			<input name = "country" class = "form-crntrol" ng-model = "data.shipping.country" required></input>
+			<span class = "error" ng-show = "shippingForm.country.$error.required">请输入-国家</span>
+		</div>
+
+        <h3>备注</h3>
+		<div class = "checkbox">
+			<label>
+			    <input name = "giftwrap" type = "checkbox" ng-model = "data.shipping.giftwrap" />
+                加入包装
+			</label>
+		</div>
+
+		<div class = "text-center">
+			<button ng-disabled = "shippingForm.$invalid" class = "btn btn-primary" ng-click = "sendOrder(data.shipping)">完成订单</button>
+		</div>
+	</div>
+</form>
+
