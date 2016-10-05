@@ -1,6 +1,7 @@
 ﻿angular.module("customFilters", [])
 .filter("unique", function () {
     return function (data, propertyName) {
+        //过滤器第一个参数为等待过滤的原始数组，第二个参数为过滤的判断条件。
         if (angular.isArray(data) && angular.isString(propertyName)) {
             var results = [];
             var keys = {};
