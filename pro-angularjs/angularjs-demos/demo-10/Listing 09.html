@@ -36,7 +36,8 @@
             <tr ng-repeat="item in todos" ng-class="$odd ? 'odd' : 'even'">
                 <td>{{$index + 1}}</td>
                 <td>{{item.action}}</td>
-                <td><span ng-if="$first || $last">{{item.complete}}</span></td>
+                <td><span ng-if="$middle">{{item.complete}}</span></td>
+                <!-- <td><span ng-if="$first || $last">{{item.complete}}</span></td> -->
             </tr>
         </table>
 

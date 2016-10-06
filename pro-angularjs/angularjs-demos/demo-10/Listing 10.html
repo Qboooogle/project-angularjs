@@ -27,13 +27,13 @@
 
         <table class="table">
             <tbody>
-                <tr ng-repeat-start="item in todos">
-                    <td>This is item {{$index}}</td>
+                <tr ng-repeat-start="item in todos" ng-class = "$odd? 'odd':'even'">
+                    <td>第 {{$index}}项</td>
                 </tr>
                 <tr>
-                    <td>The action is: {{item.action}}</td>
+                    <td>事件: {{item.action}}</td>
                 </tr>
-                <tr ng-repeat-end>
+                <tr ng-repeat-end ng-class = "$odd? 'odd':'even'">
                     <td>Item {{$index}} is {{$item.complete? '' : "not "}} complete</td>
                 </tr>
             </tbody>
