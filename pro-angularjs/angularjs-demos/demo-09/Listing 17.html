@@ -2,11 +2,11 @@
 <html ng-app="exampleApp">
 <head>
     <title>AngularJS Demo</title>
-    <link href="bootstrap.css" rel="stylesheet" />
-    <link href="bootstrap-theme.css" rel="stylesheet" />
-    <script src="angular.js"></script>
-    <script src="controllers.js"></script>
-    <script src="filters.js"></script>
+    <link href="vender/bootstrap.css" rel="stylesheet" />
+    <link href="vender/bootstrap-theme.css" rel="stylesheet" />
+    <script src="vender/angular.js"></script>
+    <script src="modules/controllers.js"></script>
+    <script src="modules/filters.js"></script>
 
     <script>
 
@@ -33,7 +33,7 @@
                     }
                 }
             });
-             
+
         var now = new Date();
         myApp.value("nowValue", now);
 
@@ -53,7 +53,7 @@
 
 
 </head>
-<body> 
+<body>
     <div class="panel">
         <div class="page-header">
             <h3>AngularJS App</h3>
