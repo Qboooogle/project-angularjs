@@ -16,10 +16,12 @@
                     { action: "Call family", complete: false }];
 
                 $scope.addNewItem = function (newItem) {
-                    $scope.todos.push({
-                        action: newItem.action + " (" + newItem.location + ")",
-                        complete: false
-                    });
+                    if (angular.isDefined(newItem)&&angular.isDefined(newItem.action)&&angular.isDefined(newItem.location)){
+                        $scope.todos.push({
+                            action: newItem.action + " (" + newItem.location + ")",
+                            complete: false
+                        });
+                    }
                 };
             });
     </script>
@@ -42,6 +44,7 @@
                         <input id="actionText" class="form-control"
                                ng-model="newTodo.action">
                     </div>
+                    <!-- 属性newTodo并不存在，直到监听到变化才会创建。 -->
                     <div class="form-group row">
                         <label for="actionLocation">Location:</label>
                         <select id="actionLocation" class="form-control"
