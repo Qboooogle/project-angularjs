@@ -15,7 +15,7 @@
 
                 $scope.setAddress = function (type, zip) {
                     $rootScope.$broadcast("zipCodeUpdated", {
-                        type: type, zipCode: zip 
+                        type: type, zipCode: zip
                     });
                     console.log("Type: " + type + " " + zip);
                 }
