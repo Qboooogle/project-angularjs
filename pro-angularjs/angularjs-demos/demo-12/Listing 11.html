@@ -12,7 +12,7 @@
                 $scope.addUser = function (userDetails) {
                     if (myForm.$valid) {
                         $scope.message = userDetails.name
-                            + " (" + userDetails.email + ") (" 
+                            + " (" + userDetails.email + ") ("
                             + userDetails.agreed + ")";
                     } else {
                         $scope.showValidation = true;
@@ -34,12 +34,13 @@
     </script>
     <style>
         form.validate .ng-invalid-required.ng-dirty { background-color: lightpink; }
-        form.validate .ng-invalid-email.ng-dirty { 
+        form.validate .ng-invalid-email.ng-dirty {
             background-color: lightgoldenrodyellow; }
         div.error { color: red; font-weight: bold; }
     </style>
 </head>
 <body>
+<!-- 延迟校验反馈 -->
     <div id="todoPanel" class="panel" ng-controller="defaultCtrl">
         <form name="myForm" novalidate ng-submit="addUser(newUser)"
               ng-class="showValidation ? 'validate' : ''">
