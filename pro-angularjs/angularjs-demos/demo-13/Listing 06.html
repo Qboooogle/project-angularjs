@@ -20,6 +20,7 @@
     </script>
 </head>
 <body>
+    <!-- 单一控制器与多个视图/两个视图之间职能隔离，导致不能共享数据 -->
     <div class="well" ng-controller="simpleCtrl">
         <h4>Billing Zip Code</h4>
         <div class="form-group">
@@ -35,7 +36,7 @@
             <input class="form-control" ng-model="zip">
         </div>
         <button class="btn btn-primary" ng-click="copyAddress()">
-            Use Billing
+            Use Billing（复制）
         </button>
         <button class="btn btn-primary" ng-click="setAddress('shippingZip', zip)">
             Save Shipping
