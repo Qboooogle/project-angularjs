@@ -8,6 +8,7 @@
     <script>
         angular.module("exampleApp", [])
             .controller("defaultCtrl", function ($scope) {
+
                 $scope.addUser = function (userDetails) {
                     $scope.message = userDetails.name
                         + " (" + userDetails.email + ") (" + userDetails.agreed + ")";
@@ -33,7 +34,7 @@
                 </div>
                 <div class="checkbox">
                     <label>
-                        <input name="agreed" type="checkbox" 
+                        <input name="agreed" type="checkbox"
                                ng-model="newUser.agreed" required>
                         I agree to the terms and conditions
                     </label>
