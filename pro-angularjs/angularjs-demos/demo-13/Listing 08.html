@@ -6,6 +6,7 @@
     <link href="bootstrap.css" rel="stylesheet" />
     <link href="bootstrap-theme.css" rel="stylesheet" />
     <script>
+    //使用服务器调解作用域事件，减少对相同代码的重复。
         angular.module("exampleApp", [])
             .service("ZipCodes", function($rootScope) {
                 return {
