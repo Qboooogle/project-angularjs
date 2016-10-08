@@ -13,6 +13,7 @@
                     $scope[args.type] = args.zipCode;
                 });
 
+                //两个作用域都分别存在。
                 $scope.setAddress = function (type, zip) {
                     $rootScope.$broadcast("zipCodeUpdated", {
                         type: type, zipCode: zip
@@ -20,8 +21,14 @@
                     console.log("Type: " + type + " " + zip);
                 }
 
+                //只存在于第二个作用域中，此时的$cope.zip特指第二个域。
+                //【理解】：每一次设置的时候，会注册一个由顶级（根）作用域向
+                //下的每一个子作用域传递的函数《broadcast("zipCodeUpdeted")》，
+                //该函数携带了需要共享的数据的资源。然后被on监听到，从而引
+                //起资源被分配到每一个作用域中新创建或已存在的变量中，
+                //使得该作用域下同步了共享的资源。达到数据分享的目的。
                 $scope.copyAddress = function () {
-                    $scope.zip = $scope.billingZip;
+                    $scope.zip = $scope.shippingZip;
                 }
             });
     </script>
@@ -35,6 +42,9 @@
         </div>
         <button class="btn btn-primary" ng-click="setAddress('billingZip', zip)">
             Save Billing
+        </button>
+        <button class="btn btn-primary" ng-click="copyAddress()">
+            Use Billing
         </button>
     </div>
     <div class="well" ng-controller="simpleCtrl">
