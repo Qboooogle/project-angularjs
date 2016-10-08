@@ -23,7 +23,7 @@
 
                 $scope.myCustomSorter = function (item) {
                     return item.expiry < 5 ? 0 : item.price;
-                }             
+                }
             });
     </script>
 
@@ -51,6 +51,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                <!-- 链式过滤 -->
                     <tr ng-repeat="p in products | orderBy:[myCustomSorter, '-price'] | limitTo: 5">
                         <td>{{p.name}}</td>
                         <td>{{p.category}}</td>
