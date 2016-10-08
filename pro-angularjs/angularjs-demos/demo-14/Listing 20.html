@@ -7,8 +7,8 @@
     <script>
         angular.module("exampleApp", [])
             .controller("defaultCtrl", function ($scope) {
-            
-                // ...statements omitted for brevity...             
+
+                // ...statements omitted for brevity...
             });
     </script>
     <script src="customFilters.js"></script>
@@ -38,6 +38,7 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="p in products | orderBy:[myCustomSorter, '-price'] | limitTo: 5">
+                    <!-- ：后面无匹配项，默认为false或null。则不进行逆转 -->
                         <td>{{p.name | labelCase }}</td>
                         <td>{{p.category | labelCase:true }}</td>
                         <td>{{p.expiry}}</td>
