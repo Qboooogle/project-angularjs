@@ -23,7 +23,7 @@
 
                 $scope.myCustomSorter = function (item) {
                     return item.expiry < 5 ? 0 : item.price;
-                }             
+                }
             });
     </script>
 
@@ -51,6 +51,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                <!-- 运用多个谓语进行排序 -->
                     <tr ng-repeat="p in products | orderBy:[myCustomSorter, '-price']">
                         <td>{{p.name}}</td>
                         <td>{{p.category}}</td>

@@ -27,7 +27,7 @@
                         i <= $scope.products.length; i++) {
                     $scope.limitRange.push(i.toString());
                 }
-
+// 定义作用域行为，选取满足函数的对象
                 $scope.selectItems = function (item) {
                     return item.category == "Fish" || item.name == "Beer";
                 };

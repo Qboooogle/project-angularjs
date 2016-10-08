@@ -23,7 +23,7 @@
 
                 $scope.limitVal = "5";
                 $scope.limitRange = [];
-                for (var i = (0 - $scope.products.length); 
+                for (var i = (0 - $scope.products.length);
                         i <= $scope.products.length; i++) {
                     $scope.limitRange.push(i.toString());
                 }
@@ -39,7 +39,7 @@
             </h3>
         </div>
         <div class="panel-body">
-            Limit: <select ng-model="limitVal" 
+            Limit: <select ng-model="limitVal"
                 ng-options="item for item in limitRange"></select>
         </div>
         <div class="panel-body">
@@ -53,6 +53,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                <!-- 限制项目数量 -->
                     <tr ng-repeat="p in products | limitTo:limitVal">
                         <td>{{p.name}}</td>
                         <td>{{p.category}}</td>
