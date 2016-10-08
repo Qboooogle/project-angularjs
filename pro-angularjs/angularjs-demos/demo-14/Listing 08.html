@@ -51,7 +51,7 @@
                     <tr ng-repeat="p in products">
                         <td>{{p.name}}</td>
                         <td>{{p.category}}</td>
-                        <td>{{getExpiryDate(p.expiry) | date:"shortDate"}}</td>
+                        <td>{{getExpiryDate(p.expiry) | date:"mediumdate"}}</td>
                         <td class="text-right">{{p.price | currency }}</td>
                     </tr>
                 </tbody>
