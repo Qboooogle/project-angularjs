@@ -7,7 +7,7 @@
     <link href="bootstrap-theme.css" rel="stylesheet" />
     <script type="text/ng-template" id="scopeTemplate">
         <div class="panel-body">
-            <p>Data Value: {{local}}</p>
+            <p>Data Value: {{local}}</p>//第二次绑定。
         </div>
     </script>
     <script type="text/javascript">
@@ -19,7 +19,7 @@
                             document.querySelector("#scopeTemplate")).html();
                     },
                     scope: {
-                        local: "@nameprop"
+                        local: "@nameprop"//第一次绑定。
                     }
                 }
             })
@@ -37,3 +37,4 @@
     </div>
 </body>
 </html>
+<!-- 双向数据绑定，和隔离作用域，计算表达式的值。 -->
