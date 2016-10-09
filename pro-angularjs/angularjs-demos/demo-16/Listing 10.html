@@ -4,11 +4,11 @@
     <script src="angular.js"></script>
     <link href="bootstrap.css" rel="stylesheet" />
     <link href="bootstrap-theme.css" rel="stylesheet" />
-    <script type="text/template" id="listTemplate">
+    <!-- <script type="text/template" id="listTemplate">
         <ul>
             <li ng-repeat="item in data">{{item.price | currency}}</li>
         </ul>
-    </script>
+    </script> -->
     <script>
         angular.module("exampleApp", [])
             .directive("unorderedList", function () {
@@ -18,6 +18,7 @@
                     },
                     restrict: "A",
                     templateUrl: "itemTemplate.html"
+                    // 使用外部文件作为模板
                 }
             }).controller("defaultCtrl", function ($scope) {
                 $scope.products = [
@@ -32,7 +33,7 @@
 <body ng-controller="defaultCtrl">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3>Products</h3> 
+            <h3>Products</h3>
         </div>
         <div class="panel-body">
             <div unordered-list="products">
@@ -41,4 +42,4 @@
         </div>
     </div>
 </body>
-</html> 
+</html>
