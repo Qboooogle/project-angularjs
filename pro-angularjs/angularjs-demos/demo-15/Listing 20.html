@@ -1,6 +1,7 @@
 <html ng-app="exampleApp">
 <head>
     <title>Directives</title>
+    使用jQuery替换掉jqLite.必须在angularjs加载之前载入jQuery.angularjs才会检查到其在而不用jqLite语法。
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="angular.js"></script>
     <link href="bootstrap.css" rel="stylesheet" />
@@ -15,15 +16,15 @@
                         var listElem = angular.element("<ul>").appendTo(element);
                         for (var i = 0; i < data.length; i++) {
                             (function () {
-                                var itemElement = 
+                                var itemElement =
                                     angular.element("<li>").appendTo(listElem);
                                 var index = i;
                                 var watcherFn = function (watchScope) {
-                                    return watchScope.$eval(propertyExpression, 
+                                    return watchScope.$eval(propertyExpression,
                                         data[index]);
                                 }
                                 scope.$watch(watcherFn, function (newValue, oldValue) {
-                                    itemElement.text(newValue);
+                            有        itemElement.text(newValue);
                                 });
                             }());
                         }
