@@ -9,6 +9,13 @@
             .directive("unorderedList", function () {
                 return function (scope, element, attrs) {
                     // implementation code will go here
+                    // 获取元素的属性，该属性被赋值了一个对象-$scope.products
+                    var data = scope[attrs["unorderedList"]];
+                    if (angular.isArray(data)) {
+                        for (var i = 0; i < data.length; i++) {
+                            console.log("Items : " + data[i].name);
+                        }
+                    }
                 }
             })
             .controller("defaultCtrl", function ($scope) {
