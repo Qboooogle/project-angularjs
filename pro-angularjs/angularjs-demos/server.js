@@ -2,14 +2,14 @@
 * @Author: QBoooogle
 * @Date:   2016-10-04 19:16:18
 * @Last Modified by:   QBoooogle
-* @Last Modified time: 2016-10-09 13:10:12
+* @Last Modified time: 2016-10-09 16:47:45
 */
 
 var connect = require('connect'),
     serveStatic = require('serve-static');
 
 var app = connect();
-app.use(serveStatic("./demo-15"));
+app.use(serveStatic("./demo-16"));
 app.listen(8000);
 console.log("服务器已经在8000端口运行。通过http://127.0.0.1:8000/test.html访问");
 
