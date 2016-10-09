@@ -12,7 +12,9 @@
                         scope.data = scope[attrs["unorderedList"]];
                     },
                     restrict: "A",
-                    templateUrl: "tableTemplate.html"
+                    templateUrl: "tableTemplate.html",
+                    replace: true
+                    //设置replace为true.将把载体元素直接替换掉。本例中将div替换成table
                 }
             }).controller("defaultCtrl", function ($scope) {
                 $scope.products = [
